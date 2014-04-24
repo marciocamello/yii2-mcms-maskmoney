@@ -1,6 +1,7 @@
 MCMS Mask Money
 ===============
 Mask Money base in Jquery maskMoney
+http://plentz.github.io/jquery-maskmoney/
 
 Installation
 ------------
