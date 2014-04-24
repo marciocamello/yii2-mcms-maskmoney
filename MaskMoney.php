@@ -14,6 +14,7 @@ class MaskMoney extends InputWidget
 	public $hasModel = [];
 	public $htmlOptions = [];
 	public $pluginOptions = [];
+	public $options = ['class' => 'form-control'];
 
 	/**
 	 * @see MaskMoney
@@ -31,11 +32,11 @@ class MaskMoney extends InputWidget
 	 */
 	public function run()
 	{
-		$htmlOptions = ArrayHelper::merge(['class' => 'form-control'],$this->htmlOptions);
 		if ($this->hasModel()) {
+			$htmlOptions = ArrayHelper::merge(['class' => 'form-control'],$this->htmlOptions);
 			echo Html::activeTextInput($this->model, $this->attribute, $htmlOptions);
 		} else {
-			echo Html::textInput($this->name, $this->value, $htmlOptions);
+			echo Html::textInput($this->name, $this->value, $this->options);
 		}
 		$this->registerScript();
 	}
