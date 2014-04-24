@@ -29,11 +29,7 @@ Once the extension is installed, simply use it in your code by  :
 
 ```php
 <?
-	echo $form->field($model, 'price',[
-		'addon' => [
-			'prepend' => ['content' => Store::currency(), 'options'=>[]],
-		],
-	])->widget(\mcms\maskmoney\MaskMoney::className(),[
+	echo $form->field($model, 'price')->widget(\mcms\maskmoney\MaskMoney::className(),[
 		 'htmlOptions' => [
 			 'placeholder' => '0.00',
 		 ]
