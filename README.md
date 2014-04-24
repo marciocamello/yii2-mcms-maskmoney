@@ -28,4 +28,24 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \mcms\maskmoney\AutoloadExample::widget(); ?>```
+<?
+	echo $form->field($model, 'price',[
+		'addon' => [
+			'prepend' => ['content' => Store::currency(), 'options'=>[]],
+		],
+	])->widget(\mcms\maskmoney\MaskMoney::className(),[
+		 'htmlOptions' => [
+			 'placeholder' => '0.00',
+		 ]
+	]);
+
+	echo \mcms\maskmoney\MaskMoney::widget([
+		'name' => 'price',
+		'htmlOptions' => [
+			'placeholder' => '0.00',
+		]
+	]);
+
+?>
+
+```
